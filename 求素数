@@ -1,0 +1,30 @@
+#include<stdio.h>
+int is_prime(int i)
+{
+	for (int j=2; j * j <= i; j++)
+	{
+		if (i % j == 0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+int main()
+{
+	int c = 3;
+	for (int i = 100; i >= 2; i--)
+	{
+		int ret=is_prime(i);
+		if (ret == 1)
+		{
+			printf("%d ", i);
+			c--;
+		}
+		if (c == 0)
+		{
+			break;
+		}
+	}
+	return 0;
+}
