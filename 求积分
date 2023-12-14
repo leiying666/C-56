@@ -1,0 +1,26 @@
+2.
+#include<stdio.h>
+#include<math.h>
+
+double jixian(int n)
+{
+	double ret = 0;
+	double a = 0, b = 3.14159;
+	double s = (b - a) / n;
+	for (int i = 1; i <= n-1; i++)
+	{
+		ret += sin(2 * s * i)+s*i;
+	}
+	double a1 = sin(2 * a) + a;
+	double b1 = sin(2 * b) + b;
+	return ((2 * ret + (a1 + b1))/ 2)* s;
+}
+int main()
+{
+	int n;
+	n = 10;
+	double s1 = jixian(n);
+	n = 20;
+	double s2 = jixian(n);
+	printf("%.3lf %.3lf\n", s1, s2);
+	return 0;
